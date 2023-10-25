@@ -1,0 +1,6 @@
+/**index.wxss**/
+.circle{
+    width: 100rpx;
+    height: 100rpx;
+    background-color: skyblue;
+}
