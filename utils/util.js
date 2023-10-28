@@ -14,21 +14,6 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
-function throttle(fn,delay){
-    let valid = true
-    return function() {
-       if(!valid){
-           return false 
-       }
-        valid = false
-        setTimeout(() => {
-            fn()
-            valid = true;
-        }, delay)
-    }
-}
-
 module.exports = {
   formatTime,
-  throttle
 }

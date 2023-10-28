@@ -1,0 +1,11 @@
+<!--pages/info/info.wxml-->
+<view class="container">
+    <view style="height: {{viewHeight + 'px'}}; width: 100vw;background-color: pink;">
+        <view class="mapView">
+            <map id="map" class="map" latitude="{{latitude}}" longitude="{{longitude}}" markers='{{marker}}'>
+            </map>
+        </view>
+    </view>
+
+    <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+</view>

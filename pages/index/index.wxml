@@ -1,7 +1,20 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="circle" bindtap='goToBooking'>
-  </view>
-  <text>{{text}}</text>
-  
+    <view style="height: {{viewHeight + 'px'}}; width: 100vw;">
+        <swiper style="height: {{viewHeight + 'px'}}; width: 100vw;" circular="true">
+            <swiper-item>
+                <image style="height: {{viewHeight + 'px'}}; width: 100%;" src='https://13917877.s21i.faiusr.com/4/ABUIABAEGAAgxY-E5gUokMSizQQwgAo4lQQ.png' mode='aspectFill'></image>
+            </swiper-item>
+            <swiper-item>
+                <image style="height: {{viewHeight + 'px'}}; width: 100%;" src='https://img2.baidu.com/it/u=3967901932,3238319243&fm=253&fmt=auto&app=138&f=JPEG?w=855&h=475' mode='aspectFill'></image>
+            </swiper-item>
+            <swiper-item>
+                <image style="height: {{viewHeight + 'px'}}; width: 100%;" src='https://img2.baidu.com/it/u=3572356985,2705850198&fm=253&fmt=auto&app=138&f=JPEG?w=780&h=487' mode='aspectFill'></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view style="height: {{viewHeight + 'px'}}; width: 100vw;background-color: pink;">
+        <picker style='width: 100vw; height: 100rpx;' mode='multiSelector' bindcolumnchange="bindMultiPickerColumnChange" bindchange="bindMultiPickerChange" value="{{bookingDataPicker.bookingIndex}}" range="{{bookingDataPicker.bookingArray}}">{{bookingDataPicker.bookingArray[0][bookingDataPicker.bookingIndex[0]]}}, {{bookingDataPicker.bookingRealArray[bookingDataPicker.bookingIndex[1]]}}</picker>
+    </view>
+    <button style="width: 80%;" hover-class="none" class="bookingBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" disabled="{{bookingBtn.disable}}">{{bookingBtn.text}}</button>
 </view>

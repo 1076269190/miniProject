@@ -1,6 +1,7 @@
 /**index.wxss**/
-.circle{
-    width: 100rpx;
-    height: 100rpx;
+.bookingBtn{
     background-color: skyblue;
+    position: fixed;
+    bottom: 20px;
+    font-size: 10px;
 }
