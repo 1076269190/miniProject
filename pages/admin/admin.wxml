@@ -1,0 +1,6 @@
+<!--pages/admin/admin.wxml-->
+<view>
+    <view class="saoyisao" style="height: {{viewHeight + 'px'}}; width: 100vw; background-color: burlywood;">
+        <button bindtap='saoyisao'>扫一扫</button>
+    </view>
+</view>

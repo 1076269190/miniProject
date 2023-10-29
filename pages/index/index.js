@@ -13,11 +13,12 @@ Page({
             bookingIndex: [0, 0],
             bookingRealArray: ['9:00-10:00', '10:00-11:00'],
         },
-        phoneNumber: '1234',
+        phoneNumber: '17695566326',
         bookingBtn: {
             text: '预约',
             disable: false,
         },
+        adminPhoneList: [17695566326]
     },
     onLoad() {
         this.getViewHeight();
@@ -26,7 +27,9 @@ Page({
     },
     getViewHeight: function () {
         wx.getSystemInfo().then(res => {
-            this.setData({viewHeight: res.windowHeight})
+            this.setData({
+                viewHeight: res.windowHeight
+            })
         })
     },
     checkBooking: function () {
@@ -73,8 +76,16 @@ Page({
         console.log(e.detail.code) // 动态令牌
         console.log(e.detail.errMsg) // 回调信息（成功失败都会返回）
         console.log(e.detail.errno) // 错误码（失败时返回）
-        if (this.data.phoneNumber) {
-            this.goToBooking()
+        if (this.data.adminPhoneList.find(item => item == this.data.phoneNumber)) {
+            wx.navigateTo({
+                url: `/pages/admin/admin?phoneNumber=${this.data.phoneNumber}`,
+            }).then(res => {
+                return
+            })
+        } else {
+            if (this.data.phoneNumber) {
+                this.goToBooking()
+            }
         }
     },
     changeBookingNumberCount: async function (date) {

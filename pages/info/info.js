@@ -5,7 +5,6 @@ drawQrcode({
     width: 200,
     height: 200,
     canvasId: 'myQrcode',
-    // ctx: wx.createCanvasContext('myQrcode'),
     text: '1',
 })
 Page({
@@ -18,7 +17,7 @@ Page({
                 borderWidth: 1,
                 bgColor: 'white'
             },
-            title:'你在哪了',//标注点名
+            title: '你在哪了', //标注点名
             width: 20, //宽
             height: 30, //高
             id: 1,
@@ -33,7 +32,9 @@ Page({
     },
     getViewHeight: function () {
         wx.getSystemInfo().then(res => {
-            this.setData({viewHeight: res.windowHeight})
+            this.setData({
+                viewHeight: res.windowHeight
+            })
         })
     },
 })
